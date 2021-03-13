@@ -11,7 +11,11 @@
 
     <resultMap id="BaseResultMap" type="cn.zhiyucs.springcloud.entities.Payment">
         <id column="id" property="id" jdbcType="BIGINT" />
+<<<<<<< HEAD
         <id column="serial" property="serial" jdbcType="VARCHAR" />
+=======
+        <id column="order_status" property="serial" jdbcType="VARCHAR" />
+>>>>>>> origin/main
     </resultMap>
 
     <select id="getPaymentById" parameterType="Long" resultMap="BaseResultMap">
