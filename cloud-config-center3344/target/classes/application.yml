@@ -1,0 +1,31 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhiyu1998/spring-cloud-study-2020.git # Github上面git仓库名字
+          search-paths: # 搜索目录
+            - springcloud-config
+      label: main # 读取分支
+  # rabbitmq相关配置 15672是Web管理界面的端口; 5672是MQ访问的端口
+  rabbitmq:
+    host: 192.168.175.133
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
